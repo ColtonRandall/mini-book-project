@@ -26,7 +26,16 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        {/* Children props go witihin two Component tags */}
+        <p>
+          A New York Times bestseller! The perfect Father's Day gift, birthday
+          present for dad, Valentine's Day book, or sweet keepsake for a
+          daughter of any age!A sweet picture book showcasing all the ways a
+          father will help his daughter grow, this is the gift for every girl
+          dad and little girl to celebrate their special bond,
+        </p>
+      </Book>
 
       <Book
         img={secondBook.img}
@@ -37,7 +46,7 @@ function BookList() {
   );
 }
 
-const Book = ({ img, author, title }) => {
+const Book = ({ img, author, title, children }) => {
   // const { img, title, author } = props;
 
   return (
@@ -45,6 +54,7 @@ const Book = ({ img, author, title }) => {
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   );
 };
